@@ -1,9 +1,9 @@
 <template>
   <div class="app-wrapper">
-    <!-- ── Background gradient ── -->
+    <!-- ── Background ── -->
     <div class="bg-gradient" />
 
-    <!-- ── Animated liquid blobs ── -->
+    <!-- ── Animated pastel blobs ── -->
     <div class="blob blob-1" />
     <div class="blob blob-2" />
     <div class="blob blob-3" />
@@ -98,9 +98,11 @@ function restart() {
   position: fixed;
   inset: 0;
   z-index: 0;
-  background: radial-gradient(ellipse at 20% 50%, #12053a 0%, #0a0a1a 60%),
-    radial-gradient(ellipse at 80% 10%, #071a3a 0%, transparent 60%);
-  background-color: #0a0a1a;
+  background:
+    radial-gradient(ellipse at 15% 40%, rgba(196, 181, 253, 0.22) 0%, transparent 60%),
+    radial-gradient(ellipse at 85% 15%, rgba(147, 197, 253, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 90%, rgba(249, 168, 212, 0.14) 0%, transparent 55%),
+    #f2f4fb;
 }
 
 /* ── Blobs ── */
@@ -108,44 +110,44 @@ function restart() {
   position: fixed;
   z-index: 1;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(72px);
   pointer-events: none;
   will-change: border-radius, transform;
 }
 
 .blob-1 {
-  width: 520px;
-  height: 520px;
-  top: -120px;
+  width: 500px;
+  height: 500px;
+  top: -140px;
   left: -160px;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.55) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.32) 0%, transparent 70%);
   animation: morph1 11s ease-in-out infinite;
 }
 
 .blob-2 {
-  width: 460px;
-  height: 460px;
-  top: -80px;
-  right: -120px;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.5) 0%, transparent 70%);
+  width: 440px;
+  height: 440px;
+  top: -60px;
+  right: -130px;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.28) 0%, transparent 70%);
   animation: morph2 14s ease-in-out infinite;
 }
 
 .blob-3 {
-  width: 400px;
-  height: 400px;
-  bottom: -100px;
-  left: 20%;
-  background: radial-gradient(circle, rgba(219, 39, 119, 0.45) 0%, transparent 70%);
+  width: 380px;
+  height: 380px;
+  bottom: -80px;
+  left: 22%;
+  background: radial-gradient(circle, rgba(244, 114, 182, 0.25) 0%, transparent 70%);
   animation: morph3 9s ease-in-out infinite;
 }
 
 .blob-4 {
-  width: 350px;
-  height: 350px;
-  bottom: 10%;
-  right: 5%;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.35) 0%, transparent 70%);
+  width: 320px;
+  height: 320px;
+  bottom: 12%;
+  right: 6%;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.2) 0%, transparent 70%);
   animation: morph4 12s ease-in-out infinite;
 }
 
@@ -154,20 +156,17 @@ function restart() {
   33%       { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; transform: translate(20px, 15px); }
   66%       { border-radius: 50% 50% 40% 60% / 40% 70% 50% 50%; transform: translate(-10px, 25px); }
 }
-
 @keyframes morph2 {
   0%, 100% { border-radius: 40% 60% 60% 40% / 40% 30% 70% 60%; transform: translate(0, 0); }
   50%       { border-radius: 70% 30% 40% 60% / 60% 50% 40% 50%; transform: translate(-25px, 20px); }
 }
-
 @keyframes morph3 {
   0%, 100% { border-radius: 55% 45% 35% 65% / 55% 35% 65% 45%; transform: translate(0, 0); }
   40%       { border-radius: 35% 65% 55% 45% / 45% 65% 35% 55%; transform: translate(15px, -20px); }
   80%       { border-radius: 65% 35% 45% 55% / 65% 45% 55% 35%; transform: translate(-20px, 10px); }
 }
-
 @keyframes morph4 {
-  0%, 100% { border-radius: 50% 50% 50% 50%; transform: translate(0, 0) scale(1); }
+  0%, 100% { border-radius: 50%; transform: translate(0, 0) scale(1); }
   50%       { border-radius: 40% 60% 55% 45% / 45% 55% 60% 40%; transform: translate(-15px, -20px) scale(1.05); }
 }
 
@@ -190,12 +189,12 @@ function restart() {
   align-items: center;
   gap: 20px;
   padding: 12px 24px;
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.95);
   border-radius: 999px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(99, 102, 241, 0.09), inset 0 1px 0 rgba(255,255,255,0.9);
   min-width: min(760px, calc(100vw - 48px));
   max-width: 860px;
 }
@@ -212,7 +211,7 @@ function restart() {
 
 .nav-logo-icon {
   font-size: 20px;
-  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  background: linear-gradient(135deg, #7c3aed, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -221,11 +220,11 @@ function restart() {
 .nav-logo-text {
   font-size: 16px;
   font-weight: 700;
-  color: #fff;
+  color: #1e1b4b;
   letter-spacing: -0.3px;
 }
 
-/* Center progress */
+/* Progress pill */
 .nav-center {
   flex: 1;
   display: flex;
@@ -236,8 +235,8 @@ function restart() {
   position: relative;
   width: 180px;
   height: 28px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(99, 102, 241, 0.07);
+  border: 1px solid rgba(99, 102, 241, 0.15);
   border-radius: 999px;
   overflow: hidden;
   display: flex;
@@ -250,10 +249,9 @@ function restart() {
   left: 0;
   top: 0;
   height: 100%;
-  background: linear-gradient(90deg, #7c3aed, #2563eb, #db2777);
+  background: linear-gradient(90deg, rgba(124,58,237,0.35), rgba(59,130,246,0.35), rgba(236,72,153,0.35));
   border-radius: 999px;
   transition: width 0.5s ease;
-  opacity: 0.7;
 }
 
 .nav-progress-label {
@@ -261,11 +259,11 @@ function restart() {
   z-index: 1;
   font-size: 12px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
+  color: #4c1d95;
   letter-spacing: 0.5px;
 }
 
-/* Right side */
+/* Right */
 .nav-right {
   flex-shrink: 0;
   display: flex;
@@ -274,7 +272,7 @@ function restart() {
 
 .nav-tagline {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(30, 27, 75, 0.38);
   font-weight: 500;
   white-space: nowrap;
 }
@@ -284,22 +282,22 @@ function restart() {
   align-items: center;
   gap: 6px;
   padding: 6px 14px;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(37, 99, 235, 0.3));
-  border: 1px solid rgba(124, 58, 237, 0.4);
+  background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(59,130,246,0.1));
+  border: 1px solid rgba(124, 58, 237, 0.2);
   border-radius: 999px;
   font-size: 14px;
   font-weight: 700;
-  color: #fff;
+  color: #4c1d95;
 }
 
 .nav-score-icon {
   font-size: 10px;
-  color: #a78bfa;
+  color: #7c3aed;
 }
 
 .nav-btn {
   padding: 8px 18px;
-  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  background: linear-gradient(135deg, #7c3aed, #3b82f6);
   border: none;
   border-radius: 999px;
   color: #fff;
@@ -307,14 +305,15 @@ function restart() {
   font-weight: 600;
   cursor: pointer;
   transition: opacity 0.2s, transform 0.2s;
+  box-shadow: 0 2px 12px rgba(124, 58, 237, 0.25);
 }
 
 .nav-btn:hover {
-  opacity: 0.85;
+  opacity: 0.88;
   transform: scale(1.03);
 }
 
-/* ── Main content area ── */
+/* ── Main content ── */
 .page-content {
   position: relative;
   z-index: 10;
